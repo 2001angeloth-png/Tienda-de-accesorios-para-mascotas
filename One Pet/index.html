@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>One Pet | Accesorios para Mascotas</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  
+  <script>
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('nav');
+
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
+
+  <body>
+    <!-- Encabezado -->
+    <header>
+  <div class="logo" onclick="window.location.href='index.html'">One Pet</div>
+  <nav class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="productos.html">Productos</a>
+    <a href="comentarios.html">Comentarios</a>
+  </nav>
+      <button id="btnCarrito">🛒 Carrito (<span id="contador">0</span>)</button>
+    </header>
+
+    <!-- Sección principal -->
+    <section class="hero">
+      <h1>Los mejores accesorios para nuestras mascotas 🐶🐱</h1>
+      <p>Encuentra collares, juguetes, camas y más para consentir a tu peludo.</p>
+      <button id="verProductos">Ver productos</button>
+    </section>
+
+    <!-- Productos -->
+    <section class="productos" id="productos">
+      <h2>Productos destacados</h2>
+      <div class="grid-productos"></div>
+    </section>
+
+    <!-- Carrito lateral -->
+<aside class="carrito" id="carrito">
+  <h3>🛍️ Tu carrito</h3>
+
+  <ul id="listaCarrito"></ul>
+  <p id="total">Total: $0</p>
+
+  <div id="accionesCarrito">
+    <button id="vaciarCarrito">Vaciar carrito</button>
+    <button id="finalizarCompra">Finalizar compra</button>
+  </div>
+
+  <!-- Formulario oculto -->
+  <form id="formularioCompra" class="oculto">
+    <h4>Finalizar Compra</h4>
+    <input type="text" id="nombre" placeholder="Tu nombre" required />
+    <input type="email" id="email" placeholder="Tu correo" required />
+    <input type="text" id="direccion" placeholder="Dirección de envío" required />
+    <button type="submit">Confirmar pedido</button>
+  </form>
+
+  <button id="cerrarCarrito">Cerrar</button>
+</aside>
+
+
+    <footer>
+      <p>© 2025 One Pet - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+<script>
+  let lastScrollTop = 0;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+      // Bajando
+      header.classList.add("hide");
+    } else {
+      // Subiendo
+      header.classList.remove("hide");
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // evita valores negativos
+  });
+</script>
+
+  </body>
+</html>

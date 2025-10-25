@@ -1,0 +1,382 @@
+/* 🧡 Fuente moderna y reset básico */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(180deg, #fffaf5 0%, #ffe6cc 100%);
+  color: #333;
+  min-height: 100vh;
+}
+
+/* ====== HEADER GENERAL ====== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ff914d;
+  color: white;
+  padding: 15px 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+/* ====== CUANDO SE OCULTA ====== */
+header.hide {
+  transform: translateY(-100%);
+}
+
+/* ====== LOGO ====== */
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+/* ====== ENLACES (VERSIÓN DE ESCRITORIO) ====== */
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #fff3e0;
+}
+
+/* ====== VERSIÓN MÓVIL ====== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .nav-links {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    padding: 5px 0;
+  }
+}
+
+/* ====== ESPACIO PARA CONTENIDO ====== */
+body {
+  margin: 0;
+  padding-top: 80px; /* Evita que el header tape el contenido */
+  font-family: Arial, sans-serif;
+}
+
+
+/* --- SECCIÓN HERO (Inicio) --- */
+.hero {
+  text-align: center;
+  padding: 90px 20px;
+  background: linear-gradient(135deg, #ff914d, #ffb875);
+  color: white;
+  border-radius: 0 0 40px 40px;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 25px;
+}
+
+.hero button {
+  background-color: white;
+  color: #ff914d;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.hero button:hover {
+  background-color: #fff2e0;
+  transform: scale(1.05);
+}
+
+/* --- PRODUCTOS --- */
+.productos {
+  padding: 70px 30px;
+  text-align: center;
+}
+
+.productos h2 {
+  font-size: 2rem;
+  color: #ff914d;
+  margin-bottom: 30px;
+}
+
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  color: #ff914d;
+  margin-top: 10px;
+}
+
+.card p {
+  margin: 8px 0 15px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.card button {
+  background-color: #ff914d;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: background-color 0.3s;
+}
+
+.card button:hover {
+  background-color: #ffb27f;
+}
+
+/* --- NOSOTROS --- */
+.nosotros {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #fffdfa;
+}
+
+.nosotros h2 {
+  color: #ff914d;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.nosotros p {
+  max-width: 700px;
+  margin: 10px auto;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* --- CONTACTO --- */
+.contacto {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #fffdfa;
+}
+
+.contacto h2 {
+  color: #ff914d;
+  margin-bottom: 25px;
+  font-size: 2rem;
+}
+
+.form-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+.form-contacto input:focus,
+.form-contacto textarea:focus {
+  border-color: #ff914d;
+  outline: none;
+}
+
+.form-contacto button {
+  background-color: #ff914d;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-contacto button:hover {
+  background-color: #ffb27f;
+}
+
+/* --- CARRITO (si lo usas) --- */
+.carrito {
+  background-color: white;
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  position: fixed;
+  right: -320px;
+  top: 0;
+  height: 100%;
+  transition: right 0.3s;
+  z-index: 999;
+}
+
+.carrito.abierto {
+  right: 0;
+}
+
+.carrito h3 {
+  color: #ff914d;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.carrito button {
+  background-color: #ff914d;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.carrito button:hover {
+  background-color: #ffb27f;
+}
+
+/* --- FOOTER --- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #ff914d;
+  color: white;
+  margin-top: 60px;
+  font-size: 0.9rem;
+}
+
+/* Animación inicial de entrada */
+.scroll-anim {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Estado visible al hacer scroll */
+.scroll-anim.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 📱 Ajustes para pantallas pequeñas (celulares) */
+@media (max-width: 768px) {
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .productos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .producto {
+    max-width: 90%;
+    margin: auto;
+  }
+
+  .producto img {
+    width: 100%;
+    height: auto;
+  }
+
+  h1, h2, h3, p {
+    text-align: center;
+  }
+
+  button, a {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 15px;
+  }
+}
+
+
